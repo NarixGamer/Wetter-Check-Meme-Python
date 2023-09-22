@@ -21,7 +21,6 @@ def update_progress():
         time.sleep(0.1)
     loading_window.destroy()
     show_message_window()
-    # Entsperre die Eingabe und den Button nach Abschluss des Ladebalkens
     input_entry.config(state=tk.NORMAL)
     button.config(state=tk.NORMAL)
 
@@ -33,13 +32,9 @@ def show_message_window():
 
 def open_loading_window():
     global loading_window, status_label
-
-    # Überprüfen, ob die Eingabe leer ist
     if not input_entry.get():
         messagebox.showerror("Fehler", "Die Eingabe darf nicht leer sein.")
         return
-
-    # Sperre die Eingabe und den Button
     input_entry.config(state=tk.DISABLED)
     button.config(state=tk.DISABLED)
 
